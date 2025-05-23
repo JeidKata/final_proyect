@@ -28,24 +28,30 @@ public class University {
         }
     }
 
-    public List<Student> getStudentsList() {
-        return studentsList;
+    public void getStudentsList() {
+        for (Student student : studentsList) {
+            System.out.println("\t" + student.getName());
+        }
     }
 
     public void setStudentsList(Student student) {
         this.studentsList.add(student);
     }
 
-    public List<Teacher> getTeachersList() {
-        return teachersList;
+    public void getTeachersList() {
+        for (Teacher teacher : teachersList) {
+            System.out.println("\t" + teacher.getName());
+        }
     }
 
     public void setTeachersList(Teacher teacher) {
         this.teachersList.add(teacher);
     }
 
-    public List<Course> getCoursesList() {
-        return coursesList;
+    public void getCoursesList() {
+        for (Course course : coursesList) {
+            System.out.println("\t" + course.getName());
+        }
     }
 
     public void setCoursesList(Course course) {
