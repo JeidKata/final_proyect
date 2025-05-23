@@ -1,3 +1,10 @@
+import org.globant.java.university.Course;
+import org.globant.java.university.Student;
+import org.globant.java.university.Teacher;
+import org.globant.java.university.University;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +12,25 @@ public class Main {
         Scanner read = new Scanner(System.in);
 
         System.out.println("Bienvenido a la Universidad");
-        byte option;
+
+        Student s1 = new Student("Juan", 20, "123456");
+        Student s2 = new Student("Pedro", 22, "654321");
+        Student s3 = new Student("Maria", 21, "789012");
+        Student s4 = new Student("Ana", 23, "345678");
+        Student s5 = new Student("Luis", 19, "901234");
+        Student s6 = new Student("Laura", 24, "567890");
+
+        Teacher t1 = new Teacher("Jeidy", 20, true, 10f);
+        Teacher t2 = new Teacher("Carlos", 30, false, 5);
+        Teacher t3 = new Teacher("Juan", 5, true, 20f);
+        Teacher t4 = new Teacher("Karen", 10, false, 15);
+
+        Course c1 = new Course("Matematicas",  "101", t1, Arrays.asList(s1, s2, s3, s4));
+        Course c2 = new Course("Historia",  "102", t2, Arrays.asList(s4, s5, s6));
+
+        University u = new University(Arrays.asList(s1, s2, s3, s4, s5, s6), Arrays.asList(t1, t2, t3, t4), Arrays.asList(c1, c2));
+
+        /*byte option;
         do {
             System.out.println("¿Qué desea realizar?");
             System.out.println("\t1. Listar profesores\n\t2. Listar clases\n\t3. Crear estudiante\n\t4. Crear clase\n\t5. Listar clases de un estudiante\n\t6. Salir");
@@ -32,6 +57,6 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
-        } while (option != 6);
+        } while (option != 6);*/
     }
 }
