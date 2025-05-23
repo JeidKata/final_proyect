@@ -16,19 +16,24 @@ public class Course {
         this.students = students;
     }
 
-    public showInfoCourse() {
+    public void showInfoCourse() {
         System.out.println("Course name: " + name);
         System.out.println("Course code: " + code);
         System.out.println("Teacher: " + teacher.getName());
         System.out.println("Students enrolled: ");
         for (Student student : students) {
-            System.out.println(student.getName());
+            System.out.println("\t" + student.getName());
         }
     }
 
     public void addStudent(Student student) {
         students.add(student);
         System.out.println("Student " + student.getName() + " added to course " + name + "\n");
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+        System.out.println("Student " + student.getName() + " removed from course " + name + "\n");
     }
 
     public String getName() {
