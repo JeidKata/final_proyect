@@ -36,22 +36,26 @@ public class Main {
 //        u.showStudentsList();
 
 //        Crear estudiante y agregar a un curso
-        System.out.println("Ingrese el nombre del estudiante: ");
-        String studentName = read.nextLine();
-        read.nextLine();
-        System.out.println("Ingrese la edad del estudiante: ");
-        int studentAge = read.nextInt();
-        System.out.println("Ingrese el ID del estudiante: ");
-        String studentId = read.next();
-        System.out.println("Ingrese el curso al que desea agregar un estudiante: ");
-        u.showCoursesList();
-        int courseNumber = read.nextInt();
-        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
-        selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
-        selectedCourse.showInfoCourse();
+//        System.out.println("Ingrese el nombre del estudiante: ");
+//        String studentName = read.nextLine();
+//        read.nextLine();
+//        System.out.println("Ingrese la edad del estudiante: ");
+//        int studentAge = read.nextInt();
+//        System.out.println("Ingrese el ID del estudiante: ");
+//        String studentId = read.next();
+//        System.out.println("Ingrese el curso al que desea agregar un estudiante: ");
+//        u.showCoursesList();
+//        int courseNumber = read.nextInt();
+//        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
+//        selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
+//        selectedCourse.showInfoCourse();
+//
+//        u.setStudentsList();
 
-        u.setStudentsList();
-        u.showStudentsList();
+        // Buscar un estudiante por ID y mostrar sus cursos
+        System.out.println("Ingrese el ID del estudiante que desea buscar: ");
+        String studentId = read.next();
+        u.courseStudentId(studentId);
 
         /*byte option;
         do {

@@ -41,7 +41,7 @@ public class University {
         }
     }
 
-  public void setStudentsList() {
+    public void setStudentsList() {
       for (Course c : coursesList) {
           for (Student s : c.getStudents()) {
               if (!studentsList.contains(s)) {
@@ -49,7 +49,7 @@ public class University {
               }
           }
       }
-  }
+    }
 
     public List<Teacher> getTeachersList() {
         return teachersList;
@@ -85,5 +85,19 @@ public class University {
 
     public void setCoursesList(Course course) {
         this.coursesList.add(course);
+    }
+
+    public void courseStudentId(String studentId) {
+        for (Student student : getStudentsList()) {
+            if (student.getStudentId().equals(studentId)) {
+                System.out.printf("\t%s está inscrito en el(los) curso(s): \n", student.getName());
+                for (Course course : getCoursesList()) {
+                    if (course.getStudents().contains(student)) {
+                        System.out.println("\t- " + course.getName());
+                    }
+                }
+                break;
+            }
+        }
     }
 }
