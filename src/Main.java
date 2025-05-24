@@ -4,6 +4,7 @@ import org.globant.java.university.Teacher;
 import org.globant.java.university.University;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,15 +26,30 @@ public class Main {
         Teacher t3 = new Teacher("Juan", 5, true, 20f);
         Teacher t4 = new Teacher("Karen", 10, false, 15);
 
-        Course c1 = new Course("Matematicas",  "101", t1, Arrays.asList(s1, s2, s3, s4));
-        Course c2 = new Course("Historia",  "102", t2, Arrays.asList(s4, s5, s6));
+        Course c1 = new Course("Matematicas",  "101", t1, new ArrayList(Arrays.asList(s1, s2, s3, s4)));
+        Course c2 = new Course("Historia",  "102", t2, new ArrayList(Arrays.asList(s4, s5, s6)));
 
-        University u = new University(Arrays.asList(s1, s2, s3, s4, s5, s6), Arrays.asList(t1, t2, t3, t4), Arrays.asList(c1, c2));
+        University u = new University(new ArrayList(Arrays.asList(s1, s2, s3, s4, s5, s6)), new ArrayList(Arrays.asList(t1, t2, t3, t4)), new ArrayList(Arrays.asList(c1, c2)));
 
-        u.showTeachersList();
+//        u.showTeachersList();
+//        u.showCoursesList();
+//        u.showStudentsList();
+
+//        Crear estudiante y agregar a un curso
+        System.out.println("Ingrese el nombre del estudiante: ");
+        String studentName = read.nextLine();
+        read.nextLine();
+        System.out.println("Ingrese la edad del estudiante: ");
+        int studentAge = read.nextInt();
+        System.out.println("Ingrese el ID del estudiante: ");
+        String studentId = read.next();
+        System.out.println("Ingrese el curso al que desea agregar un estudiante: ");
         u.showCoursesList();
-        u.showStudentsList();
-//        selectedCourse.showInfoCourse();
+        int courseNumber = read.nextInt();
+        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
+        selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
+        selectedCourse.showInfoCourse();
+
         /*byte option;
         do {
             System.out.println("¿Qué desea realizar?");
