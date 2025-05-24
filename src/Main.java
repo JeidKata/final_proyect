@@ -50,6 +50,9 @@ public class Main {
         selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
         selectedCourse.showInfoCourse();
 
+        u.setStudentsList(new Student(studentName, studentAge, studentId));
+        u.showStudentsList();
+
         /*byte option;
         do {
             System.out.println("¿Qué desea realizar?");
