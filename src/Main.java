@@ -30,6 +30,10 @@ public class Main {
 
         University u = new University(Arrays.asList(s1, s2, s3, s4, s5, s6), Arrays.asList(t1, t2, t3, t4), Arrays.asList(c1, c2));
 
+        u.showTeachersList();
+        u.showCoursesList();
+        u.showStudentsList();
+//        selectedCourse.showInfoCourse();
         /*byte option;
         do {
             System.out.println("¿Qué desea realizar?");
