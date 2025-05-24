@@ -50,7 +50,7 @@ public class Main {
         selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
         selectedCourse.showInfoCourse();
 
-        u.setStudentsList(new Student(studentName, studentAge, studentId));
+        u.setStudentsList();
         u.showStudentsList();
 
         /*byte option;

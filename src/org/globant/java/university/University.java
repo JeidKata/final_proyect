@@ -41,11 +41,15 @@ public class University {
         }
     }
 
-    public void setStudentsList() {
-        for(Course c : coursesList) {
-            studentsList.addAll(c.getStudents());
-        }
-    }
+  public void setStudentsList() {
+      for (Course c : coursesList) {
+          for (Student s : c.getStudents()) {
+              if (!studentsList.contains(s)) {
+                  studentsList.add(s);
+              }
+          }
+      }
+  }
 
     public List<Teacher> getTeachersList() {
         return teachersList;
