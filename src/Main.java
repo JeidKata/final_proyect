@@ -57,20 +57,26 @@ public class Main {
 //        String studentId = read.next();
 //        u.courseStudentId(studentId);
 
-        System.out.print("Ingrese nombre del curso: ");
-        String courseName = read.nextLine();
-        System.out.print("Ingrese código del aula: ");
-        String courseCode = read.next();
-        System.out.println("De la lista de profesores, seleccione el profesor que dictará el curso");
-        u.showTeachersList();
-        System.out.print("Ingrese el número del profesor: ");
-        int teacherNumber = read.nextInt();
-        Teacher selectedTeacher = u.getTeachersList().get(teacherNumber - 1);
-        read.nextLine();
-        System.out.print("¿Cuántos estudiantes desea agregar al curso? ");
-        int numberOfStudents = read.nextInt();
-        u.setCoursesList(new Course(courseName, courseCode, selectedTeacher, u.selectStudentForCourse(numberOfStudents)));
-        System.out.println("Curso creado exitosamente.");
+//        System.out.print("Ingrese nombre del curso: ");
+//        String courseName = read.nextLine();
+//        System.out.print("Ingrese código del aula: ");
+//        String courseCode = read.next();
+//        System.out.println("De la lista de profesores, seleccione el profesor que dictará el curso");
+//        u.showTeachersList();
+//        System.out.print("Ingrese el número del profesor: ");
+//        int teacherNumber = read.nextInt();
+//        Teacher selectedTeacher = u.getTeachersList().get(teacherNumber - 1);
+//        read.nextLine();
+//        System.out.print("¿Cuántos estudiantes desea agregar al curso? ");
+//        int numberOfStudents = read.nextInt();
+//        u.setCoursesList(new Course(courseName, courseCode, selectedTeacher, u.selectStudentForCourse(numberOfStudents)));
+//        System.out.println("Curso creado exitosamente.");
+
+        u.showCoursesList();
+        System.out.print("Seleccione un curso por número: ");
+        int courseNumber = read.nextInt();
+        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
+        selectedCourse.showInfoCourse();
 
         /*byte option;
         do {
