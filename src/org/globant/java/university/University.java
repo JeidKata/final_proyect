@@ -1,11 +1,14 @@
 package org.globant.java.university;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class University {
     private List<Student> studentsList;
     private List<Teacher> teachersList;
     private List<Course> coursesList;
+    Scanner sc = new Scanner(System.in);
 
     public University(List<Student> studentsList, List<Teacher> teachersList, List<Course> coursesList) {
         this.studentsList = studentsList;
@@ -39,6 +42,17 @@ public class University {
             System.out.printf("\t%d. %s\n", n, student.getName());
             n++;
         }
+    }
+
+    public List<Student> selectStudentForCourse(int amountAdded) {
+        showStudentsList();
+        List<Student> selectedStudents = new ArrayList<>();
+        for (int i = 0; i < amountAdded; i++) {
+            System.out.print("Seleccione el estudiante " + (i + 1) + ": ");
+            int studentNumber = sc.nextInt();
+            selectedStudents.add(getStudentsList().get(studentNumber - 1));
+        }
+        return selectedStudents;
     }
 
     public void setStudentsList() {
