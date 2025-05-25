@@ -16,19 +16,27 @@ public class Course {
         this.students = students;
     }
 
-    public showInfoCourse() {
-        System.out.println("Course name: " + name);
-        System.out.println("Course code: " + code);
-        System.out.println("Teacher: " + teacher.getName());
-        System.out.println("Students enrolled: ");
+    public void showInfoCourse() {
+        int n = 1;
+        System.out.println("-----  INFORMACIÓN CURSO  -----");
+        System.out.println("Nombre: " + name);
+        System.out.println("Aula: " + code);
+        System.out.println("Profesor: " + teacher.getName());
+        System.out.println("Estudiantes registrados: ");
         for (Student student : students) {
-            System.out.println(student.getName());
+            System.out.printf("\t%d. %s\n",n, student.getName());
+            n++;
         }
     }
 
     public void addStudent(Student student) {
         students.add(student);
-        System.out.println("Student " + student.getName() + " added to course " + name + "\n");
+        System.out.println("Estudiante " + student.getName() + " ha sido agregado al curso " + name + "\n");
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+        System.out.println("Estudiante " + student.getName() + " ha sido eliminado del curso " + name + "\n");
     }
 
     public String getName() {
