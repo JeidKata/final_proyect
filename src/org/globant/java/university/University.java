@@ -70,11 +70,20 @@ public class University {
     }
 
     public void showTeachersList() {
+        System.out.println("----- LISTADO DE PROFESORES -----");
+        short n = 1;
+        for (Teacher teacher : teachersList) {
+            System.out.printf("\t%d. %s\n", n, teacher.getName());
+            n++;
+        }
+    }
+
+    public void detailsTeacher() {
         System.out.println("-----  INFORMACIÓN PROFESOR  -----");
         for (Teacher t : teachersList) {
             t.showInfoTeacher(t);
         }
-        System.out.println("-------------------------------");
+
     }
 
     public void setTeachersList() {

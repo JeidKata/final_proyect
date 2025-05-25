@@ -11,6 +11,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
+        Course selectedCourse;
+        String courseName;
+        String courseCode;
+        int teacherNumber;
+        String studentName;
+        int studentAge;
+        String studentId;
+        int courseNumber;
+        byte option;
 
         System.out.println("Bienvenido a la Universidad");
 
@@ -31,75 +40,59 @@ public class Main {
 
         University u = new University(new ArrayList(Arrays.asList(s1, s2, s3, s4, s5, s6)), new ArrayList(Arrays.asList(t1, t2, t3, t4)), new ArrayList(Arrays.asList(c1, c2)));
 
-//        u.showTeachersList();
-//        u.showCoursesList();
-//        u.showStudentsList();
-
-//        Crear estudiante y agregar a un curso
-//        System.out.println("Ingrese el nombre del estudiante: ");
-//        String studentName = read.nextLine();
-//        read.nextLine();
-//        System.out.println("Ingrese la edad del estudiante: ");
-//        int studentAge = read.nextInt();
-//        System.out.println("Ingrese el ID del estudiante: ");
-//        String studentId = read.next();
-//        System.out.println("Ingrese el curso al que desea agregar un estudiante: ");
-//        u.showCoursesList();
-//        int courseNumber = read.nextInt();
-//        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
-//        selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
-//        selectedCourse.showInfoCourse();
-//
-//        u.setStudentsList();
-
-        // Buscar un estudiante por ID y mostrar sus cursos
-//        System.out.println("Ingrese el ID del estudiante que desea buscar: ");
-//        String studentId = read.next();
-//        u.courseStudentId(studentId);
-
-//        System.out.print("Ingrese nombre del curso: ");
-//        String courseName = read.nextLine();
-//        System.out.print("Ingrese código del aula: ");
-//        String courseCode = read.next();
-//        System.out.println("De la lista de profesores, seleccione el profesor que dictará el curso");
-//        u.showTeachersList();
-//        System.out.print("Ingrese el número del profesor: ");
-//        int teacherNumber = read.nextInt();
-//        Teacher selectedTeacher = u.getTeachersList().get(teacherNumber - 1);
-//        read.nextLine();
-//        System.out.print("¿Cuántos estudiantes desea agregar al curso? ");
-//        int numberOfStudents = read.nextInt();
-//        u.setCoursesList(new Course(courseName, courseCode, selectedTeacher, u.selectStudentForCourse(numberOfStudents)));
-//        System.out.println("Curso creado exitosamente.");
-
-//        u.showCoursesList();
-//        System.out.print("Seleccione un curso por número: ");
-//        int courseNumber = read.nextInt();
-//        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
-//        selectedCourse.showInfoCourse();
-
-        u.showTeachersList();
-
-        /*byte option;
         do {
             System.out.println("¿Qué desea realizar?");
-            System.out.println("\t1. Listar profesores\n\t2. Listar clases\n\t3. Crear estudiante\n\t4. Crear clase\n\t5. Listar clases de un estudiante\n\t6. Salir");
+            System.out.println("\t1. Crear estudiante y agregar a un curso.\n\t2. Listar clases de un estudiante.\n" +
+                    "\t3. Crear clase\n\t4. Listar clases\n\t5. Listar profesores\n\t6. Salir");
             option = read.nextByte();
+            read.nextLine();
             switch (option) {
                 case 1:
-                    // Listar profesores
+                    System.out.print("Ingrese el nombre del estudiante: ");
+                    studentName = read.nextLine();
+                    System.out.print("Ingrese la edad del estudiante: ");
+                    studentAge = read.nextInt();
+                    read.nextLine();
+                    System.out.print("Ingrese el ID del estudiante: ");
+                    studentId = read.next();
+                    System.out.println("Ingrese el curso al que desea agregar un estudiante: ");
+                    u.showCoursesList();
+                    courseNumber = read.nextInt();
+                    selectedCourse = u.getCoursesList().get(courseNumber - 1);
+                    selectedCourse.addStudent(new Student(studentName, studentAge, studentId));
+                    u.setStudentsList();
+                    System.out.println("Estudiante agregado exitosamente.");
                     break;
                 case 2:
-                    // Listar clases
+                    System.out.print("Ingrese el ID del estudiante que desea buscar: ");
+                    studentId = read.nextLine();
+                    u.courseStudentId(studentId);
                     break;
                 case 3:
-                    // Crear estudiante
+                    System.out.print("Ingrese nombre del curso: ");
+                    courseName = read.next();
+                    System.out.print("Ingrese código del aula: ");
+                    courseCode = read.next();
+                    System.out.println("De la lista de profesores, seleccione el profesor que dictará el curso");
+                    u.showTeachersList();
+                    System.out.print("Ingrese el número del profesor: ");
+                    teacherNumber = read.nextInt();
+                    Teacher selectedTeacher = u.getTeachersList().get(teacherNumber - 1);
+                    read.nextLine();
+                    System.out.print("¿Cuántos estudiantes desea agregar al curso? ");
+                    int numberOfStudents = read.nextInt();
+                    u.setCoursesList(new Course(courseName, courseCode, selectedTeacher, u.selectStudentForCourse(numberOfStudents)));
+                    System.out.println("Curso creado exitosamente.");
                     break;
                 case 4:
-                    // Crear clase
+                    u.showCoursesList();
+                    System.out.print("Seleccione un curso por número: ");
+                    courseNumber = read.nextInt();
+                    selectedCourse = u.getCoursesList().get(courseNumber - 1);
+                    selectedCourse.showInfoCourse();
                     break;
                 case 5:
-                    // Listar clases de un estudiante
+                    u.detailsTeacher();
                     break;
                 case 6:
                     System.out.println("Saliendo...");
@@ -107,6 +100,6 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
-        } while (option != 6);*/
+        } while (option != 6);
     }
 }

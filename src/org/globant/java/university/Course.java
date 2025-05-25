@@ -31,12 +31,12 @@ public class Course {
 
     public void addStudent(Student student) {
         students.add(student);
-        System.out.println("Student " + student.getName() + " added to course " + name + "\n");
+        System.out.println("Estudiante " + student.getName() + " ha sido agregado al curso " + name + "\n");
     }
 
     public void removeStudent(Student student) {
         students.remove(student);
-        System.out.println("Student " + student.getName() + " removed from course " + name + "\n");
+        System.out.println("Estudiante " + student.getName() + " ha sido eliminado del curso " + name + "\n");
     }
 
     public String getName() {
