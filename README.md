@@ -24,4 +24,4 @@ The program should:
 
   DIAGRAMA DE CLASES DE PROYECTO
 
-![clases.png](./clases.png)
+![clases.png](./Imagenes\clases.png)
