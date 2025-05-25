@@ -72,11 +72,13 @@ public class Main {
 //        u.setCoursesList(new Course(courseName, courseCode, selectedTeacher, u.selectStudentForCourse(numberOfStudents)));
 //        System.out.println("Curso creado exitosamente.");
 
-        u.showCoursesList();
-        System.out.print("Seleccione un curso por número: ");
-        int courseNumber = read.nextInt();
-        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
-        selectedCourse.showInfoCourse();
+//        u.showCoursesList();
+//        System.out.print("Seleccione un curso por número: ");
+//        int courseNumber = read.nextInt();
+//        Course selectedCourse = u.getCoursesList().get(courseNumber - 1);
+//        selectedCourse.showInfoCourse();
+
+        u.showTeachersList();
 
         /*byte option;
         do {

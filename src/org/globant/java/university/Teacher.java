@@ -8,10 +8,28 @@ public class Teacher extends Person implements CalculateSalary {
 
     public Teacher(String name, int age, boolean isPartTime, float hours) {
         super(name, age);
+        this.isPartTime = isPartTime;
+        this.hours = hours;
     }
 
     public Teacher(String name, int age, boolean isPartTime, int yearsOfExperience) {
         super(name, age);
+        this.isPartTime = isPartTime;
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    public void showInfoTeacher(Teacher teacher) {
+        System.out.println("Nombre: " + teacher.getName());
+        System.out.println("Edad: " + teacher.getAge());
+        if (teacher.isPartTime) {
+            System.out.println("Profesor Part-time");
+            System.out.println("Horas trabajadas: " + teacher.hours);
+            System.out.println("Salario por hora: " + teacher.calculateSalary(teacher.hours) + "\n");
+        } else {
+            System.out.println("Profesor Full-time");
+            System.out.println("Años de experiencia: " + teacher.yearsOfExperience);
+            System.out.println("Salario basado en experiencia: " + teacher.calculateSalary(teacher.yearsOfExperience) + "\n");
+        }
     }
 
     @Override
